@@ -1,2 +1,5 @@
-<h1>Content#page</h1>
-<p>Find me in app/views/content/page.html.erb</p>
+Page:<%= @page %>
+<br />
+<% @videos.each do |video| %>
+Name: <%=video.name%> <br />
+<% end %>
