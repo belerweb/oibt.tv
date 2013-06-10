@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>OibtTv</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+	<head>
+		<title></title>
+		<%= stylesheet_link_tag "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div id="header" class="container-fluid">
+			<div class="row-fluid">
+				<div class="span2 logo">
+					<a href="/"><strong>Oibt.TV</strong></a>
+				</div>
+				<div class="span10"></div>
+			</div>
+		</div>
+		<div id="menu" class="navbar">
+			<div class="navbar-inner">
+				<div class="container">
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+							<li>
+								<a href="#">美剧</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<%= yield %>
+		</div>
+		<div class="container-fluid">
+			<hr style="margin: 5px 0px;" />
+			<div class="footer">
+				<span class="baidu">
+					<script type="text/javascript">
+						var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+						document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F3d40b06bf0133654327b693ab5c65bd1' type='text/javascript'%3E%3C/script%3E"));
+					</script> </span>
+				© oibt.tv 2013
+			</div>
+		</div>
+	</body>
 </html>

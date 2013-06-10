@@ -3,6 +3,7 @@ class Video < ActiveRecord::Base
   alias_attribute :name, :NAME
   alias_attribute :tag, :TAG
   alias_attribute :description, :DESCRIPTION
+  alias_attribute :filesize, :FILE_SIZE
   alias_attribute :magnet, :MAGNET
   alias_attribute :ed2k, :ED2K
   alias_attribute :thunder, :THUNDER
