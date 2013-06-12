@@ -2,8 +2,7 @@ class ContentController < ApplicationController
   def page
     @page = [params[:page].to_i, 1].max
     @pagesize = 50
-    @offset = (@page - 1) * @pagesize
-    @videos = Video.order("CREATED_TIME DESC").limit(@pagesize).offset(@offset)
+    @videos = Video.order("CREATED_TIME DESC").paginate(:page=>@page, :per_page=>@pagesize)
   end
 
   def view
