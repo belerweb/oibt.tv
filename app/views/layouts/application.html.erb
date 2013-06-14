@@ -5,7 +5,7 @@
 		<meta name="Keywords" content="我爱BT,磁力下载,电驴下载,BT,BT下载,迅雷下载,旋风下载,快车下载,美剧,韩剧,日剧,纪录片,MP4电影,HR-HDTV电影,电影,高清电影,DVDrip,720P,1080P" />
 		<meta name="Description" content=""/>
 		<%= stylesheet_link_tag "application", :media => "all" %>
-		<%= javascript_include_tag "application" %>
+		<%= controller_stylesheet_link_tag %>
 		<%= csrf_meta_tags %>
 	</head>
 	<body>
@@ -14,7 +14,14 @@
 				<div class="span2 logo">
 					<a href="/"><strong>Oibt.TV</strong></a>
 				</div>
-				<div class="span10"></div>
+				<div class="span10 text-right">
+					<div class="input-append">
+						<input id="search-keyword" type="text" value="<%=@keyword%>">
+						<button id="search" class="btn" type="button">
+							搜索
+						</button>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div id="menu" class="navbar">
@@ -44,5 +51,7 @@
 				© oibt.tv 2013
 			</div>
 		</div>
+		<%= javascript_include_tag "application" %>
+		<%= controller_javascript_include_tag %>
 	</body>
 </html>

@@ -10,5 +10,10 @@ class ContentController < ApplicationController
   end
 
   def search
+    @page = [params[:page].to_i, 1].max
+    @pagesize = 50
+    @keyword = params[:keyword];
+    @videos = Video.where("name like ?", "%" << @keyword << "%").order("CREATED_TIME DESC").paginate(:page=>@page, :per_page=>@pagesize)
+    render(:action => :page)
   end
 end

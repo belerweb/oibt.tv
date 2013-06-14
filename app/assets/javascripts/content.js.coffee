@@ -1,3 +1,11 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+search = ->
+  keyword = $('#search-keyword').val()
+  if not keyword?.length
+    alert '请输入关键词'
+    return
+  window.open "/search/#{keyword}"
+
+$('#search').click -> search()
+$('#search-keyword').keyup (e) ->
+  if e.keyCode == 13
+    search()
