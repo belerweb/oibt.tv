@@ -13,7 +13,15 @@ class ContentController < ApplicationController
     @page = [params[:page].to_i, 1].max
     @pagesize = 50
     @keyword = params[:keyword];
-    @videos = Video.where("name like ?", "%" << @keyword << "%").order("CREATED_TIME DESC").paginate(:page=>@page, :per_page=>@pagesize)
+    @videos = Video.where("NAME LIKE ?", "%" << @keyword << "%").order("CREATED_TIME DESC").paginate(:page=>@page, :per_page=>@pagesize)
+    render(:action => :page)
+  end
+
+  def tag
+    @page = [params[:page].to_i, 1].max
+    @pagesize = 50
+    @tag = params[:tag];
+    @videos = Video.where("TAG LIKE ?", "%" << @tag << "%").order("CREATED_TIME DESC").paginate(:page=>@page, :per_page=>@pagesize)
     render(:action => :page)
   end
 end

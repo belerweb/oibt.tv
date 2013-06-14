@@ -16,7 +16,7 @@
 				</div>
 				<div class="span10 text-right">
 					<div class="input-append">
-						<input id="search-keyword" type="text" value="<%=@keyword%>">
+						<input id="search-keyword" type="text" value="<%= @keyword%>">
 						<button id="search" class="btn" type="button">
 							搜索
 						</button>
@@ -30,7 +30,34 @@
 					<div class="nav-collapse collapse">
 						<ul class="nav">
 							<li>
-								<a href="#">美剧</a>
+								<a href="/" target="_blank">全部</a>
+							</li>
+							<li class="<%= "active" if @tag=="美剧" %>">
+								<a href="/tag/美剧" target="_blank">美剧</a>
+							</li>
+							<li class="<%= "active" if @tag=="韩剧" %>">
+								<a href="/tag/韩剧" target="_blank">韩剧</a>
+							</li>
+							<li class="<%= "active" if @tag=="日剧" %>">
+								<a href="/tag/日剧" target="_blank">日剧</a>
+							</li>
+							<li class="<%= "active" if @tag=="720P电影" %>">
+								<a href="/tag/720P电影" target="_blank">720P电影</a>
+							</li>
+							<li class="<%= "active" if @tag=="1080P电影" %>">
+								<a href="/tag/1080P电影" target="_blank">1080P电影</a>
+							</li>
+							<li class="<%= "active" if @tag=="动画" %>">
+								<a href="/tag/动画" target="_blank">动画</a>
+							</li>
+							<li class="<%= "active" if @tag=="MP4电影" %>">
+								<a href="/tag/MP4电影" target="_blank">MP4电影</a>
+							</li>
+							<li class="<%= "active" if @tag=="RMVB电影" %>">
+								<a href="/tag/RMVB电影" target="_blank">RMVB电影</a>
+							</li>
+							<li class="<%= "active" if @tag=="DVD电影" %>">
+								<a href="/tag/DVD电影" target="_blank">DVD电影</a>
 							</li>
 						</ul>
 					</div>
