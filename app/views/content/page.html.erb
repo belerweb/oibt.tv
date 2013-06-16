@@ -1,35 +1,45 @@
 <div class="row-fluid">
-	<div class="span12">
-        <% if @videos.length > 0 %>
-		<table class="table table-striped table-bordered table-hover table-condensed">
-			<thead>
-				<tr>
-					<th>时间</th>
-					<th>标签</th>
-					<th>名称</th>
-					<th>容量</th>
-					<th>下载</th>
-					<th>下载次数</th>
-				</tr>
-			</thead>
-			<tbody>
-				<% @videos.each do |video| %>
-				<tr>
-					<td><%=video.createdtime.strftime("%H:%M")%></td>
-					<td><span class="label label-success"><%=video.tag%></span></td>
-					<td><a href="/view/<%=video.id%>.html" target="_blank"><%=video.name%></a></td>
-					<td><%=video.filesize%></td>
-					<td></td>
-					<td><%=video.download%></td>
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
-		<%= will_paginate @videos %>
-        <% else %>
-        <div class="alert">
-            <strong>对不起，没有资源。</strong>
-        </div>
+  <div class="span12">
+    <% if @videos.length > 0 %>
+        <% date = nil %>
+        <% @videos.each_with_index do |video, index| %>
+            <% if video.createdtime.strftime("%Y-%m-%d") != date %>
+                <% date = video.createdtime.strftime("%Y-%m-%d") %>
+                <% if index > 0 %>
+                    </tbody>
+                    </table>
+                <% end %>
+                <table class="table table-striped table-bordered table-hover table-condensed">
+                  <thead>
+                  <tr>
+                    <th><%= date %></th>
+                    <th>标签</th>
+                    <th>名称</th>
+                    <th>容量</th>
+                    <th>下载</th>
+                    <th>下载次数</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+            <% end %>
+            <tr>
+              <td><%= video.createdtime.strftime("%H:%M") %></td>
+              <td><span class="label label-success"><%= video.tag %></span></td>
+              <td><a href="/view/<%= video.id %>.html" target="_blank"><%= video.name %></a></td>
+              <td><%= video.filesize %></td>
+              <td></td>
+              <td><%= video.download %></td>
+            </tr>
+            <% if index==@videos.length-1 %>
+                </tbody>
+                </table>
+            <% end %>
         <% end %>
-	</div>
+        <%= will_paginate @videos %>
+    <% else %>
+        <div class="alert">
+          <strong>对不起，没有资源。</strong>
+        </div>
+    <% end %>
+  </div>
 </div>
