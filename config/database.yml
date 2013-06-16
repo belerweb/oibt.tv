@@ -1,9 +1,9 @@
 development:
   adapter: mysql2
-  host: 
-  database: 
-  username: 
-  password: 
+  host:
+  database:
+  username:
+  password:
   encoding: utf8
   reconnect: true
   pool: 5
