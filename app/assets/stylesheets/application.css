@@ -43,6 +43,17 @@ table.videos-list-table th.text-left, table.videos-list-table td.text-left {
     text-align: left;
 }
 
+div.video-detail table th {
+    width: 80px;
+    background-color: #DFF0D8;
+}
+
+.video-detail-side-ad {
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
 .footer .baidu {
     display: none;
 }

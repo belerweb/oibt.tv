@@ -1,5 +1,62 @@
 <div class="row-fluid">
-	<div class="span12">
-		<%= @video.name %>
-	</div>
+  <div class="span9">
+    <div class="video-detail">
+      <h4><%= @video.name %></h4>
+      <table class="table">
+        <tr>
+          <th>资源：</th>
+          <td><%= @video.name %></td>
+        </tr>
+        <tr>
+          <th>标签：</th>
+          <td>
+            <a href="/tag/<%= @video.tag %>" target="_blank"><span class="label label-success"><%= @video.tag %></span></a>
+          </td>
+        </tr>
+        <tr>
+          <th>在线点播：</th>
+          <td></td>
+        </tr>
+        <% if @video.magnet %>
+            <tr>
+              <th>磁力链接：</th>
+              <td>
+                <pre><%= @video.magnet %></pre>
+                <button class="btn">复制链接</button>
+              </td>
+            </tr>
+        <% end %>
+        <% if @video.ed2k %>
+            <tr>
+              <th>电驴下载：</th>
+              <td>
+                <pre><%= @video.ed2k %></pre>
+                <button class="btn">复制链接</button>
+              </td>
+            </tr>
+        <% end %>
+        <% if @video.thunder %>
+            <tr>
+              <th>迅雷下载：</th>
+              <td>
+                <pre><%= @video.thunder %></pre>
+                <button class="btn">复制链接</button>
+              </td>
+            </tr>
+        <% end %>
+        <tr>
+          <th>影片介绍：</th>
+          <td><%= @video.description %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="span3">
+    <div class="video-detail-side-ad">
+      <a href="http://click.linktech.cn/?m=ctrip&a=A100168564&l=00076&l_cd1=0&l_cd2=0&u_id=" target=_blank><img src="http://pages.ctrip.com/images/button/300x250.jpg" width="300" height="250" border="0"></a><img src="http://track.linktech.cn/?m=ctrip&a=A100168564&l=00076&l_cd1=0&l_cd2=0" width="1" height="1" border="0" style="display:none">
+    </div>
+    <div class="video-detail-side-ad">
+      <a href="http://click.linktech.cn/?m=lafaso&a=A100168564&l=00242&l_cd1=0&l_cd2=0&u_id=" target=_blank><img src="http://img1.imglafaso.com/userfiles/file/2013/05/17/20130517115915.gif" width="170" height="280" border="0"></a><img src="http://track.linktech.cn/?m=lafaso&a=A100168564&l=00242&l_cd1=0&l_cd2=0" width="1" height="1" border="0" style="display:none">
+    </div>
+  </div>
 </div>

@@ -1,85 +1,88 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>我爱BT,磁力下载,电驴下载,BT,BT下载,迅雷下载,旋风下载,快车下载,美剧,电影,高清电影</title>
-		<meta name="Keywords" content="我爱BT,磁力下载,电驴下载,BT,BT下载,迅雷下载,旋风下载,快车下载,美剧,韩剧,日剧,纪录片,MP4电影,HR-HDTV电影,电影,高清电影,DVDrip,720P,1080P" />
-		<meta name="Description" content=""/>
-		<meta name="baidu_union_verify" content="59cf12376564323d95c9c9e0ea6751f5">
-		<%= stylesheet_link_tag "application", :media => "all" %>
-		<%= controller_stylesheet_link_tag %>
-		<%= csrf_meta_tags %>
-	</head>
-	<body>
-		<div id="header" class="container-fluid">
-			<div class="row-fluid">
-				<div class="span2 logo">
-					<a href="/"><strong>Oibt.TV</strong></a>
-				</div>
-				<div class="span10 text-right">
-					<div class="input-append">
-						<input id="search-keyword" type="text" value="<%= @keyword%>">
-						<button id="search" class="btn" type="button">
-							搜索
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="menu" class="navbar">
-			<div class="navbar-inner">
-				<div class="container">
-					<div class="nav-collapse collapse">
-						<ul class="nav">
-							<li>
-								<a href="/">全部</a>
-							</li>
-							<li class="<%= "active" if @tag=="美剧" %>">
-								<a href="/tag/美剧" target="_blank">美剧</a>
-							</li>
-							<li class="<%= "active" if @tag=="韩剧" %>">
-								<a href="/tag/韩剧" target="_blank">韩剧</a>
-							</li>
-							<li class="<%= "active" if @tag=="日剧" %>">
-								<a href="/tag/日剧" target="_blank">日剧</a>
-							</li>
-							<li class="<%= "active" if @tag=="720P电影" %>">
-								<a href="/tag/720P电影" target="_blank">720P电影</a>
-							</li>
-							<li class="<%= "active" if @tag=="1080P电影" %>">
-								<a href="/tag/1080P电影" target="_blank">1080P电影</a>
-							</li>
-							<li class="<%= "active" if @tag=="动画" %>">
-								<a href="/tag/动画" target="_blank">动画</a>
-							</li>
-							<li class="<%= "active" if @tag=="MP4电影" %>">
-								<a href="/tag/MP4电影" target="_blank">MP4电影</a>
-							</li>
-							<li class="<%= "active" if @tag=="RMVB电影" %>">
-								<a href="/tag/RMVB电影" target="_blank">RMVB电影</a>
-							</li>
-							<li class="<%= "active" if @tag=="DVD电影" %>">
-								<a href="/tag/DVD电影" target="_blank">DVD电影</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container-fluid">
-			<%= yield %>
-		</div>
-		<div class="container-fluid">
-			<hr style="margin: 5px 0px;" />
-			<div class="footer">
+<head>
+  <title>我爱BT,磁力下载,电驴下载,BT,BT下载,迅雷下载,旋风下载,快车下载,美剧,电影,高清电影</title>
+  <meta name="Keywords" content="我爱BT,磁力下载,电驴下载,BT,BT下载,迅雷下载,旋风下载,快车下载,美剧,韩剧,日剧,纪录片,MP4电影,HR-HDTV电影,电影,高清电影,DVDrip,720P,1080P"/>
+  <meta name="Description" content=""/>
+  <meta name="baidu_union_verify" content="59cf12376564323d95c9c9e0ea6751f5">
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= controller_stylesheet_link_tag %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="header" class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2 logo">
+      <a href="/"><strong>Oibt.TV</strong></a>
+    </div>
+    <div class="span10 text-right">
+      <div class="input-append">
+        <input id="search-keyword" type="text" value="<%= @keyword %>">
+        <button id="search" class="btn" type="button">
+          搜索
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="menu" class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li>
+            <a href="/">全部</a>
+          </li>
+          <li class="<%= "active" if @tag=="美剧" %>">
+            <a href="/tag/美剧" target="_blank">美剧</a>
+          </li>
+          <li class="<%= "active" if @tag=="韩剧" %>">
+            <a href="/tag/韩剧" target="_blank">韩剧</a>
+          </li>
+          <li class="<%= "active" if @tag=="日剧" %>">
+            <a href="/tag/日剧" target="_blank">日剧</a>
+          </li>
+          <li class="<%= "active" if @tag=="720P电影" %>">
+            <a href="/tag/720P电影" target="_blank">720P电影</a>
+          </li>
+          <li class="<%= "active" if @tag=="1080P电影" %>">
+            <a href="/tag/1080P电影" target="_blank">1080P电影</a>
+          </li>
+          <li class="<%= "active" if @tag=="动画" %>">
+            <a href="/tag/动画" target="_blank">动画</a>
+          </li>
+          <li class="<%= "active" if @tag=="MP4电影" %>">
+            <a href="/tag/MP4电影" target="_blank">MP4电影</a>
+          </li>
+          <li class="<%= "active" if @tag=="RMVB电影" %>">
+            <a href="/tag/RMVB电影" target="_blank">RMVB电影</a>
+          </li>
+          <li class="<%= "active" if @tag=="DVD电影" %>">
+            <a href="/tag/DVD电影" target="_blank">DVD电影</a>
+          </li>
+          <li>
+            <a href="http://owe.gw8888.com/" target="_blank">折扣购物</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <%= yield %>
+</div>
+<div class="container-fluid">
+  <hr style="margin: 5px 0px;"/>
+  <div class="footer">
 				<span class="baidu">
 					<script type="text/javascript">
-						var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-						document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F3d40b06bf0133654327b693ab5c65bd1' type='text/javascript'%3E%3C/script%3E"));
-					</script> </span>
-				© oibt.tv 2013
-			</div>
-		</div>
-		<%= javascript_include_tag "application" %>
-		<%= controller_javascript_include_tag %>
-	</body>
+                        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F3d40b06bf0133654327b693ab5c65bd1' type='text/javascript'%3E%3C/script%3E"));
+                    </script> </span>
+    © oibt.tv 2013
+  </div>
+</div>
+<%= javascript_include_tag "application" %>
+<%= controller_javascript_include_tag %>
+</body>
 </html>

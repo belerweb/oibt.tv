@@ -24,12 +24,26 @@
             <% end %>
             <tr>
               <td style="width:80px;"><%= video.createdtime.strftime("%H:%M") %></td>
-              <td style="width:90px;"><span class="label label-success"><%= video.tag %></span></td>
+              <td style="width:90px;">
+                <a href="/tag/<%= video.tag %>" target="_blank"><span class="label label-success"><%= video.tag %></span></a>
+              </td>
               <td class="text-left"><a href="/view/<%= video.id %>.html" target="_blank"><%= video.name %></a></td>
               <td style="width:180px;">
-                <a <% if video.magnet %>href="<%= video.magnet %>"<% end %> class="btn btn-mini <% if !video.magnet %>disabled<% end %>"><i class="icon-download"></i> 磁力</a>
-                <a <% if video.ed2k %>href="<%= video.ed2k %>"<% end %> class="btn btn-mini <% if !video.ed2k %>disabled<% end %>"><i class="icon-download"></i> 电驴</a>
-                <a <% if video.thunder %>href="<%= video.thunder %>"<% end %> class="btn btn-mini <% if !video.thunder %>disabled<% end %>"><i class="icon-download"></i> 迅雷</a>
+                <a
+                <% if video.magnet %>href="<%= video.magnet %>"
+                <% end %> class="btn btn-mini
+                  <% if !video.magnet %>disabled
+                  <% end %>"><i class="icon-download"></i> 磁力</a>
+                <a
+                <% if video.ed2k %>href="<%= video.ed2k %>"
+                <% end %> class="btn btn-mini
+                  <% if !video.ed2k %>disabled
+                  <% end %>"><i class="icon-download"></i> 电驴</a>
+                <a
+                <% if video.thunder %>href="<%= video.thunder %>"
+                <% end %> class="btn btn-mini
+                  <% if !video.thunder %>disabled
+                  <% end %>"><i class="icon-download"></i> 迅雷</a>
               </td>
               <td style="width:60px;"><%= video.filesize %></td>
               <!-- td style="width:60px;"><%= video.download %></td -->
