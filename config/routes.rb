@@ -1,4 +1,6 @@
 OibtTv::Application.routes.draw do
+  devise_for :accounts
+
   match 'page/:page' => 'content#page'
   match 'view/:id' => 'content#view'
   match 'search/:keyword(/:page)' => 'content#search'
