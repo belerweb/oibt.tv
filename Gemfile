@@ -17,3 +17,5 @@ gem 'bootstrap-will_paginate'
 gem 'bootstrap_helper', '3.2.2.0'
 
 gem 'devise'
+
+gem "angularjs-rails", "~> 1.0.7"
