@@ -19,3 +19,4 @@ gem 'bootstrap_helper', '3.2.2.0'
 gem 'devise'
 
 gem "angularjs-rails", "~> 1.0.7"
+gem 'jquery-slimscroll-rails'
