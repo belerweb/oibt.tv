@@ -20,3 +20,5 @@ gem 'devise'
 
 gem "angularjs-rails", "~> 1.0.7"
 gem 'jquery-slimscroll-rails'
+
+gem 'bootstrap-x-editable-rails'

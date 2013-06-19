@@ -5,5 +5,7 @@
 //= require jquery.ui.touch-punch
 //= require jquery.slimscroll
 
+//= require bootstrap-editable
+
 //= require ace-elements
 //= require ace
