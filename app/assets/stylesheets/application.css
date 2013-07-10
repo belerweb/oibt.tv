@@ -2,58 +2,58 @@
  *= require twitter/bootstrap
  */
 body {
-    padding-top: 10px;
+	padding-top: 10px;
 }
 
 #header .logo {
-    font-size: 48px;
+	font-size: 48px;
 }
 
 #menu {
-    margin: 10px 0;
+	margin: 10px 0;
 }
 
 #menu .navbar-inner {
-    border-left: 0;
-    border-right: 0;
-    border-radius: 0;
+	border-left: 0;
+	border-right: 0;
+	border-radius: 0;
 }
 
 #search-form {
-    margin: 0;
+	margin: 0;
 }
 
 table.videos-list-table {
-    font-size: 12px;
+	font-size: 12px;
 }
 
 table.videos-list-table a {
-    color: #000000;
+	color: #000000;
 }
 
 table.videos-list-table a:hover {
-    color: #0088CC;
+	color: #0088CC;
 }
 
 table.videos-list-table th, table.videos-list-table td {
-    text-align: center;
+	text-align: center;
 }
 
 table.videos-list-table th.text-left, table.videos-list-table td.text-left {
-    text-align: left;
+	text-align: left;
 }
 
 div.video-detail table th {
-    width: 80px;
-    background-color: #DFF0D8;
+	width: 80px;
+	background-color: #DFF0D8;
 }
 
 .video-detail-side-ad {
-    text-align: center;
-    overflow: hidden;
-    margin-bottom: 5px;
+	text-align: center;
+	overflow: hidden;
+	margin-bottom: 5px;
 }
 
-.footer .baidu {
-    display: none;
+.footer .baidu, .footer .cnzz {
+	display: none;
 }
